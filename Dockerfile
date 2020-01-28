@@ -1,5 +1,3 @@
-FROM nginx:latest
+FROM verdaccio/verdaccio:latest
 
-EXPOSE 80
-
-COPY nginx/nginx.conf /etc/nginx/nginx.conf
+USER root
