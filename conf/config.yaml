@@ -1,4 +1,5 @@
+storage: ./storage
 packages:
     '@*/*':
       access: $all
-      publish: $authenticated
+      publish: $all
