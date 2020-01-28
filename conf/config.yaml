@@ -1,5 +1,14 @@
 storage: ./storage
+web:
+    title: Mettrr
+    primary_color: "#7551FF"
+auth:
+    htpasswd:
+      file: /verdaccio/storage/htpasswd
+      max_users: 3
 packages:
     '@*/*':
-      access: $all
-      publish: $all
+      access: $authenticted
+      publish: $authenticated
+logs:
+    - {type: stdout, format: pretty, level: http}

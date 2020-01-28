@@ -2,12 +2,14 @@ version: "3.6"
 
 services:
     verdaccio:
-        image: verdaccio/verdaccio:4
+        image: verdaccio/verdaccio:latest
         container_name: verdaccio
         ports:
             - 4873:4873
         volumes:
             - ./conf:/verdaccio/conf
+            - ./storage:/verdaccio/storage/data
+            - ./plugins:/verdaccio/plugins
 
     nginx:
         build: .
