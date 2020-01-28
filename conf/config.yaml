@@ -1,0 +1,4 @@
+packages:
+    '@*/*':
+      access: $all
+      publish: $authenticated

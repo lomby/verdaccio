@@ -1,0 +1,18 @@
+version: "3.5"
+
+services:
+    verdaccio:
+        image: verdaccio/verdaccio:4
+        container_name: verdaccio
+        ports:
+            - "4873:4873"
+        volumes:
+            - .:verdaccio
+
+    nginx:
+        image: nginx:alpine
+        restart: always
+        volumes:
+            - ./nginx/nginx.conf:/etc/nginx/ngnx.conf
+        ports:
+            - "80:80"
